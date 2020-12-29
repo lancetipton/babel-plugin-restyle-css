@@ -1,7 +1,9 @@
 # babel-plugin-restyle-css
 
 Babel plugin to convert reStyle css strings into JS objects durning build.
-Code originally taken from [babel-plugin-css-to-js](https://github.com/jakecoxon/babel-plugin-css-to-js)
+<br/>
+Code originally taken from [babel-plugin-css-to-js](https://github.com/jakecoxon/babel-plugin-css-to-js).
+<br/>
 It was then modified to meet the needs of this library.
   * `css` prop was changed to `reStyle`
   * All dependencies were updated to the latest versions
