@@ -1,4 +1,4 @@
-({
+reStyle({
   "foo": {
     paddingTop: "0px !important"
   }

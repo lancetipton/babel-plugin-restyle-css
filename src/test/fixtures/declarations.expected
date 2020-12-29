@@ -1,5 +1,5 @@
 
-({
+reStyle({
   transform: getTransform(),
   borderRadius: 20
 });

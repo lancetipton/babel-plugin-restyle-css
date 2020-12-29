@@ -1,4 +1,4 @@
-({
+reStyle({
   [something]: {
     width: "100%",
     [key]: "100%"

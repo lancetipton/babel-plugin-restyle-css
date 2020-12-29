@@ -1,7 +1,7 @@
 reStyle`
 #a > asd > asdaw32312 { 
   :hover {
-    composes: ${foo ? reStyle`border: 1px` : undefined};
+    composes: ${foo ? reInline`border: 1px` : undefined};
     transform: ${state => state.hello};
     margin: 1px 1px ${bar} 1px;
     margin: asd;

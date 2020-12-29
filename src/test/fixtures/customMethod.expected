@@ -1,0 +1,12 @@
+customMethod({
+  ".test": {
+    margin: `1px 1px ${bar} 1px`,
+    margin: "asd"
+  }
+});
+customMethod({
+  ".test": {
+    margin: `1px 1px ${bar} 1px`,
+    margin: "asd"
+  }
+});

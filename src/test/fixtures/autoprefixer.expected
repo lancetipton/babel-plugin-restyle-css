@@ -1,4 +1,4 @@
-({
+reStyle({
   ".foo": {
     webkitAnimationName: foo,
     animationName: foo,

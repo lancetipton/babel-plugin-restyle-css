@@ -1,4 +1,4 @@
-({
+reStyle({
   "#a > asd > asdaw32312": {
     ":hover": {
       composes: foo ? {

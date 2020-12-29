@@ -10,8 +10,12 @@
   ],
   "keywords": [
     "reStyle",
+    "restyle",
     "theme",
     "css",
+    "keg",
+    "re-theme",
+    "retheme",
     "babel-plugin"
   ],
   "author": "Lance Tipton <lancetipton04@gmail.com>",
@@ -21,6 +25,7 @@
   "bugs": "https://github.com/lancetipton/babel-plugin-restyle-css/issues",
   "scripts": {
     "build": "babel src -d build --presets @babel/preset-env --ignore src/test",
+    "predeploy": "yarn build",
     "deploy": "np --no-release-draft --no-2fa",
     "test": "babel-node --presets @babel/preset-env src/test/index.js"
   },

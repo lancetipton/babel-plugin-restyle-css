@@ -6,6 +6,8 @@ const isNumeric = x => (!isNaN(x))
 const quasiRegex = /QUASI_EXPR_(\d+)___/g
 const expressionPlaceholder = index => ('QUASI_EXPR_' + index + '___')
 
+const nodeTagOptions = [ 'reStyle', 'reInline', false ]
+
 const dataFromNodeType = (t, node, nodeExprs) => {
   switch(node.type){
     case 'decl': {
@@ -53,7 +55,6 @@ const getQuasisValue = (t, quasis) => {
 }
 
 const buildInterpolatedAst = (t, value, nodeExprs) => {
-
   const { quasis, exprs } = splitExpressions(value)
 
   return quasis.length == 2 && quasis[0].length == 0 && quasis[1].length == 0
@@ -111,8 +112,13 @@ const splitExpressions = css => {
 module.exports = ({types: t}) => {
   return {
     visitor: {
-      TaggedTemplateExpression: function(path, state) {
-        if(path.node.tag.name !== 'reStyle') return false
+      TaggedTemplateExpression(path, state) {
+        state.opts.method &&
+          !nodeTagOptions.includes(state.opts.method)
+          nodeTagOptions.push(state.opts.method)
+
+        if(!nodeTagOptions.includes(path.node.tag.name))
+          return false
 
         const nodeQuasis = path.node.quasi.quasis
         const nodeExprs = path.node.quasi.expressions
@@ -130,8 +136,15 @@ module.exports = ({types: t}) => {
 
         const objectExpression = buildObjectAst(t, processed.nodes, nodeExprs)
 
-        path.replaceWith(objectExpression)
-      },
+        path.node.tag.name === 'reInline' || state.opts.method === false
+          ? path.replaceWith(objectExpression)
+          : path.replaceWith(
+              t.callExpression(
+                t.identifier(state.opts.method || 'reStyle'),
+                [objectExpression]
+              )
+            )
+      }
     }
   }
 }
