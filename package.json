@@ -1,0 +1,34 @@
+{
+  "name": "@ltipton/babel-plugin-restyle-css",
+  "version": "0.0.4",
+  "description": "Babel plugin to convert reStyle css strings into JS objects durning build",
+  "keywords": [
+    "reStyle",
+    "theme",
+    "css",
+    "babel-plugin"
+  ],
+  "author": "Lance Tipton <lancetipton04@gmail.com>",
+  "main": "build/index.js",
+  "homepage": "https://github.com/lancetipton/babel-plugin-restyle-css",
+  "repository": "git@github.com:lancetipton/babel-plugin-restyle-css.git",
+  "bugs": "https://github.com/lancetipton/babel-plugin-restyle-css/issues",
+  "scripts": {
+    "build": "babel src -d build --presets @babel/preset-env --ignore src/test",
+    "test": "babel-node --presets @babel/preset-env src/test/index.js"
+  },
+  "dependencies": {
+    "camelcase": "5.0.0",
+    "postcss": "7.0.14",
+    "postcss-safe-parser": "4.0.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "7.12.1",
+    "@babel/core": "7.12.3",
+    "@babel/node": "^7.12.10",
+    "@babel/preset-env": "7.12.11",
+    "autoprefixer": "9.4.7",
+    "tape": "4.9.2"
+  },
+  "license": "MIT"
+}

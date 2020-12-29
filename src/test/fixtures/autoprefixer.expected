@@ -1,0 +1,7 @@
+({
+  ".foo": {
+    webkitAnimationName: foo,
+    animationName: foo,
+    color: bar
+  }
+});

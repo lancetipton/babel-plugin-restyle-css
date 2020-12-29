@@ -1,0 +1,7 @@
+reStyle`
+@media (max-width: 600px) {
+  my-el {
+    width: 100%;
+  }
+}
+`

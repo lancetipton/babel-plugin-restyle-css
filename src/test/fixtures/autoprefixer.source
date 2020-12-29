@@ -1,0 +1,2 @@
+reStyle`.foo { animation-name: ${foo}; color: ${ bar } }`;
+
