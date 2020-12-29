@@ -1,6 +1,6 @@
 {
   "name": "@ltipton/babel-plugin-restyle-css",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Babel plugin to convert reStyle css strings into JS objects durning build",
   "publishConfig": {
     "access": "public"
