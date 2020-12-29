@@ -21,7 +21,32 @@ npm install babel-plugin-restyle-css --save-dev
 yarn add babel-plugin-restyle-css --dev
 ```
 
-**Before:**
+### Setup
+
+Add it to your babel config ( `.babelrc` || `babel.config.js` )
+```js
+{
+  "plugins": [["restyle-css"]]
+}
+```
+
+**Post CSS Plugins**
+It uses postCSS under the hood to do the CSS conversion. Which means any you can pass any postCSS plugins you want by adding them to the babel config
+
+```js
+{
+  "plugins": [["restyle-css", {
+    // Add PostCss Plugins ( optional )
+    "plugins": ["autoprefixer"]
+  }]]
+}
+```
+
+
+### Use
+
+**In App**
+
 ```javascript
 const rule = props => reStyle`
   font-size: ${props.fontSize}px;
@@ -41,7 +66,7 @@ const rule = props => reStyle`
 `
 ```
 
-**After:**
+**Plugin Output**
 ```javascript
 const rule = props => ({
   fontSize: props.fontSize + 'px',
@@ -60,14 +85,3 @@ const rule = props => ({
   }
 })
 ```
-
-**.babelrc**
-```
-{
-  "plugins": [["restyle-css", {
-    "plugins": ["autoprefixer"]
-  }]]
-}
-```
-
-
